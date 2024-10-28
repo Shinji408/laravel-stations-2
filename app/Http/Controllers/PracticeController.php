@@ -20,4 +20,10 @@ class PracticeController extends Controller
         $test = 'test';
             return view('practice3', ['testParam' => $test]);
     }
+
+    public function getPractice()
+    {
+        $practices = \App\Practice::all();
+        return response()->json($practices);
+    }
 }
